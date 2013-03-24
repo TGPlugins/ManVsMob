@@ -1,0 +1,28 @@
+name: ManVsMob
+main: me.njb_said.MVM.Main
+version: 4.0
+author: njb_said
+description: ManVsMob - MVM
+commands:
+  game:
+    description:
+  admin:
+    description:
+  goto:
+    description:
+  tp:
+    description:
+    aliases: [teleport]
+  tpall:
+    description:
+  set:
+    description:
+  spawnmob:
+    description:
+    aliases: [mobspawn,mob]
+  vanish:
+    description:
+    aliases: [invis,invisible]
+  unvanish:
+    description:
+    aliases: [vis,visible]
