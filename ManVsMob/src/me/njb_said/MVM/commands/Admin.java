@@ -21,14 +21,14 @@ public class Admin implements CommandExecutor {
  		if ((p.isOp()) || (p.hasPermission("mvm.modplus"))) {
     		 if (args.length == 0) {
  				if (!Util.AdminModeList.contains(p)) {
- 					p.sendMessage("§9§oYou are now in §c§nadmin mode.");
- 					p.sendMessage("§7§oUse /admin <name> to put another player into/out of admin mode.");
+ 					p.sendMessage("ï¿½9ï¿½oYou are now in ï¿½cï¿½nadmin mode.");
+ 					p.sendMessage("ï¿½7ï¿½oUse /admin <name> to put another player into/out of admin mode.");
  					p.setGameMode(GameMode.CREATIVE);
  					Util.AdminModeList.add(p);
  				} else if (Util.AdminModeList.contains(p)) {
  					Util.AdminModeList.remove(p);
- 					p.sendMessage("§9§oYou are no longer in §c§nadmin mode.");
- 					p.sendMessage("§7§oUse /admin <name> to put another player into/out of admin mode.");
+ 					p.sendMessage("ï¿½9ï¿½oYou are no longer in ï¿½cï¿½nadmin mode.");
+ 					p.sendMessage("ï¿½7ï¿½oUse /admin <name> to put another player into/out of admin mode.");
  					p.setGameMode(GameMode.ADVENTURE);
  					if (Util.isSpectator(p)) {
  					p.setAllowFlight(true);
@@ -42,24 +42,28 @@ public class Admin implements CommandExecutor {
  					}
     		 } else if (args.length == 1) {
     	    	 Player target = Bukkit.getServer().getPlayer(args[0]);
+    	    	 if (target != null) {
 	 				if (!Util.AdminModeList.contains(target)) {
-	 					p.sendMessage("§9§o"+target.getName()+" is now in §c§nadmin mode.");
-	 					target.sendMessage("§9§oYou are now in §c§nadmin mode.");
+	 					p.sendMessage("Â§9Â§o"+target.getName()+" is now in Â§cÂ§nadmin mode.");
+	 					target.sendMessage("Â§9Â§oYou are now in Â§cÂ§nadmin mode.");
 	 					target.setGameMode(GameMode.CREATIVE);
 	 					Util.AdminModeList.add(target);
 	 				} else if (Util.AdminModeList.contains(target)) {
 	 					Util.AdminModeList.remove(target);
-	 					p.sendMessage("§9§o"+target.getName()+"is no longer in §c§nadmin mode.");
-	 					target.sendMessage("§9§oYou are no longer in §c§nadmin mode.");
+	 					p.sendMessage("Â§9Â§o"+target.getName()+"is no longer in Â§cÂ§nadmin mode.");
+	 					target.sendMessage("Â§9Â§oYou are no longer in Â§cÂ§nadmin mode.");
 	 					target.setGameMode(GameMode.ADVENTURE);
 	 			 		if ((target.isOp())) {
 	 					target.setAllowFlight(true);
 	 					}
 	 				}
+    	    	 } else {
+    	    		 p.sendMessage("Â§e'Â§l"+args[0]+"Â§e' Â§6couldnt be found.");
+    	    	 }
     		 }
  		} else {
- 			p.sendMessage("§4You must be a Mod+ Or Admin to do that!");
- 			p.sendMessage("§3§oIf you are a mod+ or admin please contact njb_said on teamspeak!");
+ 			p.sendMessage("ï¿½4You must be a Mod+ Or Admin to do that!");
+ 			p.sendMessage("ï¿½3ï¿½oIf you are a mod+ or admin please contact njb_said on teamspeak!");
  		}
      
 		return false;
